@@ -4,7 +4,7 @@
 
 | **Command**      | **Description**                        |
 |------------------|----------------------------------------|
-| <pre>```mkdir <name>```</pre>   | Create a new directory                 |
+| `mkdir <name>`   | Create a new directory                 |
 | `cd <name>`      | Navigate into the specified directory  |
 | `cd ..`          | Navigate back to the parent directory  |
 | `rm -R <name>`   | Recursively delete a directory         |
