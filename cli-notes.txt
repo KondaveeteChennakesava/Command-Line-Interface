@@ -1,0 +1,90 @@
+mkdir hello : create a directory "hello"
+cd hello : navigating to "hello" directory
+mkdir five : create a directory "five"
+cd five : navigating to "five" directory
+mkdir six : create a directory "six"
+cd six : navigating to "six" directory
+touch c.txt : creating a text file named "c.txt"
+mkdir seven : create a directory "seven"
+cd seven : navigating to "seven" directory
+touch error.log : creating a log file names "error.log"
+cd .. : navigating back
+cd .. : navigating back
+cd .. : navigating back
+mkdir one : creating a directory "one"
+cd one : navigating to directory "one"
+touch a.txt : creating a text file named "a.txt"
+touch b.txt : creating a text file named "b.txt"
+mkdir two : creating a directory named "two"
+cd two : navigating to "two" directory
+touch d.txt : creating a text file named "d.txt"
+mkdir three : creating a directory named "three"
+cd three : navigating to "three" directory
+touch e.txt : crating a text file "e.txt"
+mkdir four : creating a directory named "four"
+touch access.log : creating a log file named "access.log"
+cd .. : navigating back
+cd .. : navigating back
+cd .. : navigating back
+cd .. : navigating back
+find . -name "*.log" -type f : listing down all the files with extension ".log" in the current directory.
+find . -name "*.log" -type f -delete : deleting all the files with extension ".log" in the current directory.
+cd one : navigating to "one" directory
+nano a.txt : opening "a.txt" in nano(a cli based text editor)
+cat a.txt : reading the contents of "a.txt"
+cd .. : navigating back
+rm -R five : removing directory "five" recursively i.e. deleting all sub-folders and sub-files.
+mv one uno : renaming directory "one" to "uno"
+cd uno : navigating to directory "uno"
+mv a.txt two : moving file "a.txt" into directory two.
+
+chmod 755 'file name' : change mod of file to 755
+chmod -R 755 'directory name' : recursively change mod of all files and directories
+ps -A or ps -e : shows all tasks running in system
+firefox & : launch firefox
+whoami : user name
+groups : show groups
+uname -m : shows architecture of computer
+
+
+curl -O https://www.gutenberg.org/cache/epub/223/pg223.txt : download "Harry Potter and the Goblet of Fire" (note: use correct link if not exact)
+head -n 3 pg223.txt : print the first 3 lines of the book
+tail -n 10 pg223.txt : print the last 10 lines of the book
+
+grep -o -i 'Harry' pg223.txt | wc -l : count occurrences of "Harry"
+grep -o -i 'Ron' pg223.txt | wc -l : count occurrences of "Ron"
+grep -o -i 'Hermione' pg223.txt | wc -l : count occurrences of "Hermione"
+grep -o -i 'Dumbledore' pg223.txt | wc -l : count occurrences of "Dumbledore"
+
+sed -n '100,200p' pg223.txt : print lines 100 through 200
+
+tr ' ' '\\n' < pg223.txt | tr -d '[:punct:]' | tr 'A-Z' 'a-z' | sort | uniq | wc -l : count unique words in the book
+
+
+ps aux | grep firefox : list browser's process IDs and parent process IDs
+pkill firefox : stop Firefox browser from command line
+ps -eo pid,ppid,%cpu,cmd --sort=-%cpu | head -n 4 : top 3 processes by CPU usage
+ps -eo pid,ppid,%mem,cmd --sort=-%mem | head -n 4 : top 3 processes by Memory usage
+
+
+python3 -m http.server 8000 : start a Python HTTP server on port 8000
+# In another terminal/tab:
+lsof -i :8000 : find PID of process on port 8000
+kill <PID> : stop Python HTTP server
+
+python3 -m http.server 90 : start a Python HTTP server on port 90
+
+netstat -tuln : display all active connections and TCP/UDP ports
+sudo lsof -i :5432 : find PID of process listening on port 5432
+
+
+sudo apt update : update package list
+sudo apt install htop vim nginx -y : install htop, vim, and nginx
+sudo apt remove nginx -y : uninstall nginx
+
+
+hostname -I : show your local IP address
+ping -c 1 google.com : get IP address of google.com and check Internet
+ping -c 1 8.8.8.8 : check if Internet works by pinging Google DNS
+which node : find the location of the node command
+which code : find the location of the code (VS Code) command
