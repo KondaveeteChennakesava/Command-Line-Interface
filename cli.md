@@ -65,7 +65,7 @@
 | `grep -o -i 'Hermione' pg223.txt \| wc -l`           | Count occurrences of "Hermione"                                   |
 | `grep -o -i 'Dumbledore' pg223.txt \| wc -l`         | Count occurrences of "Dumbledore"                                 |
 | `sed -n '100,200p' pg223.txt`                        | Print lines 100 through 200 in the book                           |
-| `tr ' ' '\n' < pg223.txt \| tr -d '[:punct:]' \| tr 'A-Z' 'a-z' \| sort \| uniq \| wc -l` | Count unique words in the book  |
+| `tr -d '[:punct:]' < harry.txt \| tr '[:upper:]' '[:lower:]'\| tr -s '[:space:]' '[\n]' \| sed 's/^[[:space:]]//' \| sort \| uniq \| wc -l` | Count unique words in the book  |
 
 ---
 
